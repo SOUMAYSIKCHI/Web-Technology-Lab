@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>
+</head>
+
+<body>
+	<form id="loginForm">
+		<input type="text" placeholder="Name" id="name" required>
+		<input type="text" placeholder="Password" id="pwd" required>
+		<button type="submit">Submit</button>
+	</form>
+	<div id="result"></div>
+
+	<script>
+		var xhttp = new XMLHttpRequest();
+		var loginForm = document.getElementById('loginForm');
+		loginForm.addEventListener("submit", submit, false);
+		function submit(e) {
+			e.preventDefault();
+			var username = document.getElementById('name').value;
+			var userpwd = document.getElementById('pwd').value;
+			var result = document.getElementById("result");
+
+			xhttp.onreadystatechange = function () {
+				if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+					var xmlDoc = xhttp.responseXML;
+					var name = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+					var pwd = xmlDoc.getElementsByTagName("pwd")[0].childNodes[0].nodeValue;
+					console.log(name + pwd);
+					if (name == username && pwd == userpwd) {
+						result.innerHTML = '<h1>Successfully logged in</h1>';
+
+					}
+
+					else {
+						result.innerHTML = '<h1>Wrong Details</h1>';
+					}
+					loginForm.reset();
+				}
+			};
+
+			xhttp.open("GET", "users.xml", true);
+			xhttp.send();
+		}
+	</script>
+</body>
+
+</html>
