@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Number in Descending Order</title>
+    <script language="javascript">
+        function ndesc() {
+            var num_array = new Array();
+            var num = document.forms["frm1"].num.value;
+            document.forms["frm1"].desc.value = "";
+            var nums = num.split(',');
+            var len = num.split(',').length;
+            for (var i = 0; i < len; i++) {
+                num_array.push(nums[i]);
+            }
+            function sortN(a, b) {
+                return b - a;
+            }
+            document.forms["frm1"].desc.value = num_array.sort(sortN);
+        }
+    </script>
+</head>
+
+<body>
+    <form name="frm1">
+        <center>
+            <h3> Numbers in Descending Order</h3>
+        </center>
+        <br />
+        <center>Enter Numbers separated by Comma : <input type="text" name="num" </input><br /></center>
+        <br />
+        <center>
+            <input type="button" name="inwords" value="In Descending Order" onclick="ndesc()"></input>
+        </center>
+        <br /><br />
+        <center>Number in Descending Order : <input type="text" name="desc" </input></center>
+        <br />
+    </form>
+</body>
+
+</html>

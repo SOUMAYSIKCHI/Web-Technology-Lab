@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMR Engineering College Admission Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        fieldset { margin-bottom: 10px; }
+        label { display: block; margin-top: 10px; }
+        input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <h2>CMR Engineering College Admission Form</h2>
+    <form action="submit.php" method="post" target="_blank" enctype="multipart/form-data">
+        
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="phone">Mobile Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+            
+            <label for="telephone">Telephone Number:</label>
+            <input type="tel" id="telephone" name="telephone">
+        </fieldset>
+        
+        <fieldset>
+            <legend>Academic Details</legend>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            
+            <label for="year">Year of Passing:</label>
+            <input type="number" id="year" name="year" min="2000" max="2030" required>
+            
+            <label for="department">Select Department:</label>
+            <select id="department" name="department" required>
+                <option value="cse">Computer Science</option>
+                <option value="ece">Electronics & Communication</option>
+                <option value="mech">Mechanical</option>
+                <option value="civil">Civil</option>
+            </select>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Additional Information</legend>
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <input type="radio" name="gender" value="other"> Other
+            
+            <label for="hobbies">Hobbies:</label>
+            <input type="checkbox" name="hobbies" value="sports"> Sports
+            <input type="checkbox" name="hobbies" value="music"> Music
+            <input type="checkbox" name="hobbies" value="reading"> Reading
+            
+            <label for="profile">Upload Profile Picture:</label>
+            <input type="file" id="profile" name="profile">
+            
+            <label for="website">Personal Website (if any):</label>
+            <input type="url" id="website" name="website">
+            
+            <label for="dateTime">Preferred Interview Date & Time:</label>
+            <input type="datetime-local" id="dateTime" name="dateTime">
+            
+            <label for="range">Scholarship Score Range:</label>
+            <input type="range" id="range" name="range" min="0" max="100">
+        </fieldset>
+        
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments" rows="3"></textarea>
+        
+        <br>
+        <input type="submit" value="Submit Application">
+    </form>
+</body>
+</html>

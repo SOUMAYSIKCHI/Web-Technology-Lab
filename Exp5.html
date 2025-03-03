@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <title>capitals of countries</title>
+    <style>
+        p {
+            color: red;
+            font-weight: bold;
+            font-size: 50;
+        }
+    </style>
+    <script language="javascript">
+        function capital() {
+            var cnt = document.forms["frm1"].country.value;
+            var capital = " Please select any country ";
+            if (cnt == "India") {
+                capital = "NEW DELHI";
+            }
+            if(cnt == "Australia"){
+                capital="Canberra";
+            }
+            if(cnt=="Bhutan") {
+                capital = "Thimphu";
+            }
+            if(cnt=="Germany"){
+                capital ="Berlin "
+            }
+            if(cnt=="Afghanistan"){
+                capital="Kabul "
+            }
+
+            if (cnt == "china") {
+                capital = "BEIJING";
+            }
+            if (cnt == "pakistan") {
+                capital = "ISLAMABAD";
+            }
+            if (cnt == "bangladesh") {
+                capital = "DHAKA";
+            }
+            if (cnt == "japan") {
+                capital = "TOKYO";
+            }
+            if (cnt == "select") {
+                capital = "Please select any country";
+            }
+            document.getElementById("capt").innerHTML = capital;
+        }
+    </script>
+</head>
+
+<body>
+    <form name="frm1">
+        <br />
+        <center>
+            Select a Country : <select name="country" onchange="capital()">
+                <option value="select">--SELECT--</option>
+                <option value="india">INDIA</option>
+                <option value="china">CHINA</option>
+                <option value="pakistan">PAKISTAN</option>
+                <option value="bangladesh">BANGLADESH</option>
+                <option value="japan">JAPAN</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Australia">Australia</option>
+                <option value="Bhutan">Bhutan</option>
+                <option value="Germany">Germany</option>
+            </select>
+            <br />
+            <br />
+            <font color="green" size="6">Capital is :</font>
+            <p id="capt"></p>
+        </center>
+    </form>
+</body>
+
+</html>
